@@ -1,7 +1,11 @@
 demows
 ===========================
 
-Simple webapp pour illustrer l'utilisation de webservice qui s'appuie sur maven et tomee
+WebApp de base pour TP pédagogique pour illustrer l'utilisation de webservice et l'industrialisation des développements.
+
+## knowledge
+
+* Java : java, java-ee, java-rs, java-ws
 
 ## requirement
 
