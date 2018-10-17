@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Specify the refresh internal in seconds. -->
+<Configuration monitorInterval="60">
+
+    <Appenders>
+		<!-- ~~~~~~~~~~~~~~ log console ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %p [%c] - &lt;%m&gt;%n"/>
+        </Console>
+        
+        <!-- ~~~~~~~~~~~~~~ log fichier ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <RollingFile name="file" fileName="${sys:catalina.home}/logs/demows.logg" append="true"
+                     filePattern="${sys:catalina.home}/logs/demows-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout pattern="%highlight{%d %p [%c] - &lt;%m&gt;}%n"/>
+            <Policies>
+                <OnStartupTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+                <TimeBasedTriggeringPolicy />
+            </Policies>
+            <DefaultRolloverStrategy max="8" />
+        </RollingFile>
+        
+    </Appenders>
+
+    <Loggers> 
+        <Logger name="fr.dauphine" level="debug" additivity="false" includeLocation="true">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Logger>
+        <Root level="error">
+            <AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Root>
+    </Loggers>
+</Configuration>
