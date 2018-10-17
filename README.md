@@ -5,7 +5,8 @@ WebApp de base pour TP pédagogique pour illustrer l'utilisation de webservice e
 
 ## knowledge
 
-* Java : java, java-ee, java-rs, java-ws
+* java, java-ee, java-rs, java-ws
+* maven
 
 ## requirement
 
